@@ -1,63 +1,42 @@
-document.getElementById('planner-form').addEventListener('submit', async (event) => {
-    event.preventDefault();
+document.getElementById('dogForm').addEventListener('submit', function(event) {
+  event.preventDefault();
 
-    const formData = new FormData(event.target);
-    const formProps = Object.fromEntries(formData.entries());
+  const dogName = document.getElementById('dogName').value;
+  const dogBreed = document.getElementById('dogBreed').value;
+  const dogAge = parseInt(document.getElementById('dogAge').value);
+  const dogWeight = parseFloat(document.getElementById('dogWeight').value);
+  const energyLevel = document.getElementById('energyLevel').value;
+  const photoURL = document.getElementById('photoURL').value;
 
-    // Fetch breed-specific data using The Dog API
-    const breedData = await fetchBreedData(formProps.breed);
+  // Simulated data processing (replace with actual logic)
+  const activity = getActivity(energyLevel);
+  const mealPlan = getMealPlan(energyLevel);
 
-    // Generate personalized plan
-    const plan = generatePlan(formProps, breedData);
-
-    // Display the plan
-    displayPlan(plan);
+  const outputDiv = document.getElementById('output');
+  outputDiv.innerHTML = `
+    <h2>Hi ${dogName}!</h2>
+    <p>Activity: ${activity}</p>
+    <p>Meal Plan: ${mealPlan}</p>
+  `;
+  outputDiv.style.display = 'block';
 });
 
-async function fetchBreedData(breed) {
-    const response = await fetch(`https://api.thedogapi.com/v1/breeds/search?q=${breed}`);
-    const data = await response.json();
-
-    if (data.length === 0) {
-        throw new Error('Breed not found');
-    }
-
-    return data[0];
+function getActivity(energyLevel) {
+  const activities = {
+    low: ['Short walks', 'Gentle play sessions'],
+    medium: ['Moderate walks', 'Fetch sessions'],
+    high: ['Long hikes', 'Agility training'],
+  };
+  const randomIndex = Math.floor(Math.random() * activities[energyLevel].length);
+  return activities[energyLevel][randomIndex];
 }
 
-function generatePlan(formProps, breedData) {
-    const activityLevels = {
-        low: ['Short Walk', 'Play with Toys'],
-        medium: ['Moderate Walk', 'Fetch Game'],
-        high: ['Long Walk', 'Run with Owner'],
-    };
-
-    const mealPlans = {
-        low: ['1 cup of dry food, twice a day'],
-        medium: ['1.5 cups of dry food, twice a day'],
-        high: ['2 cups of dry food, twice a day'],
-    };
-
-    const activity = activityLevels[formProps.dogEnergyLevel][
-        Math.floor(Math.random() * activityLevels[formProps.dogEnergyLevel].length)
-    ];
-
-    const mealPlan = mealPlans[formProps.dogEnergyLevel][
-        Math.floor(Math.random() * mealPlans[formProps.dogEnergyLevel].length)
-    ];
-
-    const additionalDetails = `Breed: ${breedData.breed}, Age: ${formProps.dogAge}, Weight: ${formProps.dogWeight}`;
-
-    return {
-        activityRecommendation: activity,
-        mealPlan,
-        additionalDetails,
-    };
-}
-
-function displayPlan(plan) {
-    document.getElementById('plan-output').classList.remove('hidden');
-    document.getElementById('activity-recommendation').innerText = plan.activityRecommendation;
-    document.getElementById('meal-plan').innerText = plan.mealPlan;
-    document.getElementById('additional-details').innerText = plan.additionalDetails;
+function getMealPlan(energyLevel) {
+  const mealPlans = {
+    low: ['Lower calorie intake', 'More fiber-rich foods'],
+    medium: ['Balanced diet with protein and carbohydrates'],
+    high: ['Higher calorie intake', 'More protein-rich foods'],
+  };
+  const randomIndex = Math.floor(Math.random() * mealPlans[energyLevel].length);
+  return mealPlans[energyLevel][randomIndex];
 }
