@@ -174,7 +174,7 @@ async function plan() {
     const energyLevel = document.getElementById('energyLevel').value;
     const dogPhoto = document.getElementById('dogPhoto').files[0]; // Accessing the uploaded file
 
-    if (!dogName || !dogBreed || !dogAge || !dogWeight || !energyLevel || !dogPhoto) {
+    if (!dogName || !dogBreed || !dogAge || !dogWeight || !energyLevel ) {
         alert('Please fill in all fields');
         return;
     }
@@ -219,3 +219,10 @@ async function plan() {
     };
     reader.readAsDataURL(dogPhoto); // Convert uploaded file to Data URL
 }
+
+// Observe planOutput div for changes using MutationObserver
+const planOutput = document.getElementById('planOutput');
+const observer = new MutationObserver(function(mutationsList, observer) {
+    // Handle mutations here if needed
+});
+observer.observe(planOutput, { childList: true });
