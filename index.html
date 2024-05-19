@@ -13,7 +13,29 @@
       <label for="dogName">Dog's Name:</label>
       <input type="text" id="dogName" required>
       <label for="dogBreed">Dog's Breed:</label>
-      <input type="text" id="dogBreed" required>
+      <input list="dogBreeds" id="dogBreed" placeholder="Dog's Breed" required>
+        <datalist id="dogBreeds">
+            <option value="Labrador Retriever">
+            <option value="German Shepherd">
+            <option value="Golden Retriever">
+            <option value="Bulldog">
+            <option value="Poodle">
+            <option value="Beagle">
+            <option value="Rottweiler">
+            <option value="Yorkshire Terrier">
+            <option value="Boxer">
+            <option value="Dachshund">
+            <option value="Siberian Husky">
+            <option value="Great Dane">
+            <option value="Doberman Pinscher">
+            <option value="Shih Tzu">
+            <option value="Australian Shepherd">
+            <option value="Miniature Schnauzer">
+            <option value="Pembroke Welsh Corgi">
+            <option value="Chihuahua">
+            <option value="Border Collie">
+            <option value="Basset Hound">
+        </datalist>
       <label for="dogAge">Dog's Age (in years):</label>
       <input type="number" id="dogAge" required>
       <label for="dogWeight">Dog's Weight (in kg):</label>
