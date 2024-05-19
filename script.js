@@ -111,7 +111,7 @@ async function plan(event) {
             const dogImage = event.target.result;
             const planOutput = `
                 <div style="text-align: center;">
-                    <h2>Plan for ${dogName} (${breedInfo.name})</h2>
+                    <h2>Plan for <span style="color: blue;">${dogName}</span> (${breedInfo.name})</h2>
                     <img src="${dogImage}" alt="${dogName}" style="max-width: 100px; border-radius: 50%;">
                     <p><strong>Age:</strong> ${dogAge} years</p>
                     <p><strong>Weight:</strong> ${dogWeight} kg</p>
