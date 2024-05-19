@@ -43,21 +43,126 @@ const mealPlans = {
          <p>Breakfast: Cooked chicken with brown rice and green beans</p>
          <p>Lunch: Dry kibble with a bit of wet food</p>
          <p>Dinner: Ground turkey with sweet potatoes and peas</p>`,
-        // Add more meal plans for low energy level
+        `<h3>Meal Plan</h3>
+         <p>Breakfast: Scrambled eggs with spinach</p>
+         <p>Lunch: Dry kibble mixed with chicken broth</p>
+         <p>Dinner: Boiled chicken with quinoa and carrots</p>`,
+        `<h3>Meal Plan</h3>
+         <p>Breakfast: Cottage cheese with apple slices</p>
+         <p>Lunch: Dry kibble with pumpkin puree</p>
+         <p>Dinner: Steamed fish with brown rice and green beans</p>`,
+        `<h3>Meal Plan</h3>
+         <p>Breakfast: Yogurt with blueberries</p>
+         <p>Lunch: Dry kibble with mixed vegetables</p>
+         <p>Dinner: Beef stew with sweet potatoes and peas</p>`,
+        `<h3>Meal Plan</h3>
+         <p>Breakfast: Oatmeal with peanut butter</p>
+         <p>Lunch: Dry kibble with turkey slices</p>
+         <p>Dinner: Chicken and rice with peas and carrots</p>`,
+        `<h3>Meal Plan</h3>
+         <p>Breakfast: Boiled eggs with a slice of toast</p>
+         <p>Lunch: Dry kibble with beef broth</p>
+         <p>Dinner: Lamb with quinoa and green beans</p>`,
+        `<h3>Meal Plan</h3>
+         <p>Breakfast: Apple slices with peanut butter</p>
+         <p>Lunch: Dry kibble with salmon oil</p>
+         <p>Dinner: Turkey and rice with spinach and carrots</p>`,
+        `<h3>Meal Plan</h3>
+         <p>Breakfast: Blueberries with yogurt</p>
+         <p>Lunch: Dry kibble with cottage cheese</p>
+         <p>Dinner: Chicken with sweet potatoes and green beans</p>`,
+        `<h3>Meal Plan</h3>
+         <p>Breakfast: Scrambled eggs with cheese</p>
+         <p>Lunch: Dry kibble with green beans</p>
+         <p>Dinner: Fish with brown rice and carrots</p>`,
+        `<h3>Meal Plan</h3>
+         <p>Breakfast: Banana slices with peanut butter</p>
+         <p>Lunch: Dry kibble with beef jerky</p>
+         <p>Dinner: Pork with quinoa and green beans</p>`
     ],
     medium: [
         `<h3>Meal Plan</h3>
          <p>Breakfast: Boiled eggs with oatmeal and carrots</p>
          <p>Lunch: Dry kibble mixed with pumpkin puree</p>
          <p>Dinner: Baked salmon with quinoa and broccoli</p>`,
-        // Add more meal plans for medium energy level
+        `<h3>Meal Plan</h3>
+         <p>Breakfast: Cottage cheese with banana slices</p>
+         <p>Lunch: Dry kibble with turkey and vegetables</p>
+         <p>Dinner: Chicken with sweet potatoes and peas</p>`,
+        `<h3>Meal Plan</h3>
+         <p>Breakfast: Greek yogurt with blueberries</p>
+         <p>Lunch: Dry kibble with chicken broth</p>
+         <p>Dinner: Ground beef with rice and green beans</p>`,
+        `<h3>Meal Plan</h3>
+         <p>Breakfast: Scrambled eggs with spinach</p>
+         <p>Lunch: Dry kibble with salmon oil</p>
+         <p>Dinner: Turkey with quinoa and broccoli</p>`,
+        `<h3>Meal Plan</h3>
+         <p>Breakfast: Peanut butter toast</p>
+         <p>Lunch: Dry kibble with lamb and vegetables</p>
+         <p>Dinner: Pork with sweet potatoes and peas</p>`,
+        `<h3>Meal Plan</h3>
+         <p>Breakfast: Cottage cheese with apple slices</p>
+         <p>Lunch: Dry kibble with beef jerky</p>
+         <p>Dinner: Fish with rice and carrots</p>`,
+        `<h3>Meal Plan</h3>
+         <p>Breakfast: Yogurt with blueberries</p>
+         <p>Lunch: Dry kibble with chicken and vegetables</p>
+         <p>Dinner: Beef stew with sweet potatoes and green beans</p>`,
+        `<h3>Meal Plan</h3>
+         <p>Breakfast: Scrambled eggs with cheese</p>
+         <p>Lunch: Dry kibble with turkey slices</p>
+         <p>Dinner: Lamb with quinoa and broccoli</p>`,
+        `<h3>Meal Plan</h3>
+         <p>Breakfast: Oatmeal with peanut butter</p>
+         <p>Lunch: Dry kibble with salmon oil</p>
+         <p>Dinner: Chicken with rice and peas</p>`,
+        `<h3>Meal Plan</h3>
+         <p>Breakfast: Banana slices with yogurt</p>
+         <p>Lunch: Dry kibble with beef broth</p>
+         <p>Dinner: Turkey with sweet potatoes and green beans</p>`
     ],
     high: [
         `<h3>Meal Plan</h3>
          <p>Breakfast: Greek yogurt with blueberries and flaxseeds</p>
          <p>Lunch: Dry kibble with chicken broth</p>
          <p>Dinner: Lean beef with brown rice and spinach</p>`,
-        // Add more meal plans for high energy level
+        `<h3>Meal Plan</h3>
+         <p>Breakfast: Cottage cheese with banana slices</p>
+         <p>Lunch: Dry kibble with turkey and vegetables</p>
+         <p>Dinner: Baked salmon with quinoa and broccoli</p>`,
+        `<h3>Meal Plan</h3>
+         <p>Breakfast: Scrambled eggs with spinach</p>
+         <p>Lunch: Dry kibble with lamb and vegetables</p>
+         <p>Dinner: Chicken with sweet potatoes and peas</p>`,
+        `<h3>Meal Plan</h3>
+         <p>Breakfast: Boiled eggs with oatmeal and carrots</p>
+         <p>Lunch: Dry kibble with beef jerky</p>
+         <p>Dinner: Fish with rice and green beans</p>`,
+        `<h3>Meal Plan</h3>
+         <p>Breakfast: Peanut butter toast</p>
+         <p>Lunch: Dry kibble with chicken broth</p>
+         <p>Dinner: Turkey with quinoa and broccoli</p>`,
+        `<h3>Meal Plan</h3>
+         <p>Breakfast: Yogurt with blueberries</p>
+         <p>Lunch: Dry kibble with turkey and vegetables</p>
+         <p>Dinner: Lean beef with brown rice and spinach</p>`,
+        `<h3>Meal Plan</h3>
+         <p>Breakfast: Oatmeal with peanut butter</p>
+         <p>Lunch: Dry kibble with lamb and vegetables</p>
+         <p>Dinner: Baked salmon with sweet potatoes and peas</p>`,
+        `<h3>Meal Plan</h3>
+         <p>Breakfast: Cottage cheese with apple slices</p>
+         <p>Lunch: Dry kibble with chicken and vegetables</p>
+         <p>Dinner: Ground turkey with rice and broccoli</p>`,
+        `<h3>Meal Plan</h3>
+         <p>Breakfast: Scrambled eggs with cheese</p>
+         <p>Lunch: Dry kibble with salmon oil</p>
+         <p>Dinner: Pork with sweet potatoes and green beans</p>`,
+        `<h3>Meal Plan</h3>
+         <p>Breakfast: Banana slices with yogurt</p>
+         <p>Lunch: Dry kibble with chicken broth</p>
+         <p>Dinner: Turkey with quinoa and spinach</p>`
     ]
 };
 
