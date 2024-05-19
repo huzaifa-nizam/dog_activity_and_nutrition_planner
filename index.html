@@ -1,46 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dog Activity and Nutrition Planner</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dog Activity and Nutrition Planner</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="container">
     <h1>Dog Activity and Nutrition Planner</h1>
-    <form id="planner-form">
-        <label for="dog-name">Dog's Name:</label>
-        <input type="text" id="dog-name" name="dog-name" required>
-
-        <label for="dog-breed">Dog's Breed:</label>
-        <input type="text" id="dog-breed" name="dog-breed" required>
-
-        <label for="dog-age">Dog's Age:</label>
-        <input type="number" id="dog-age" name="dog-age" min="0" required>
-
-        <label for="dog-weight">Dog's Weight:</label>
-        <input type="number" id="dog-weight" name="dog-weight" min="0" required>
-
-        <label for="dog-energy-level">Dog's Energy Level:</label>
-        <select id="dog-energy-level" name="dog-energy-level" required>
-            <option value="low">Low</option>
-            <option value="medium">Medium</option>
-            <option value="high">High</option>
-        </select>
-
-        <label for="dog-photo-url">Optional: Dog's Photo URL:</label>
-        <input type="url" id="dog-photo-url" name="dog-photo-url">
-
-        <button type="submit">Get Personalized Plan</button>
+    <form id="dogForm">
+      <label for="dogName">Dog's Name:</label>
+      <input type="text" id="dogName" required>
+      <label for="dogBreed">Dog's Breed:</label>
+      <input type="text" id="dogBreed" required>
+      <label for="dogAge">Dog's Age (in years):</label>
+      <input type="number" id="dogAge" required>
+      <label for="dogWeight">Dog's Weight (in kg):</label>
+      <input type="number" id="dogWeight" required>
+      <label for="energyLevel">Energy Level:</label>
+      <select id="energyLevel" required>
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+      <label for="photoURL">Photo URL (optional):</label>
+      <input type="url" id="photoURL">
+      <button type="submit">Generate Plan</button>
     </form>
+    <div id="output"></div>
+  </div>
 
-    <div id="plan-output" class="hidden">
-        <h2>Your Dog's Personalized Plan:</h2>
-        <p id="activity-recommendation"></p>
-        <p id="meal-plan"></p>
-        <p id="additional-details"></p>
-    </div>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
