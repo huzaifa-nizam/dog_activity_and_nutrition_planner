@@ -86,4 +86,3 @@ async function plan() {
 
     document.getElementById('planOutput').innerHTML = planOutput;
 }
-
