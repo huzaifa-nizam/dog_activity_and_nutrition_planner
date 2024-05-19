@@ -30,20 +30,13 @@ form {
     align-items: center;
 }
 
+/* Set common width for input fields and button */
 input[type="text"],
 input[type="number"],
 select,
-input[type="url"] {
-    width: 100%;
-    padding: 12px;
-    margin: 8px 0;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 16px;
-    box-sizing: border-box;
-}
-input[type="text"] {
-    width: 100%;
+input[type="url"],
+button {
+    width: calc(100% - 24px); /* Adjusted width */
     padding: 12px;
     margin: 8px 0;
     border: 1px solid #ccc;
@@ -55,25 +48,15 @@ input[type="text"] {
 /* Style for breed selector */
 input[type="text"]#dogBreed {
     background-color: #f9f9f9;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    padding: 12px;
-    width: calc(100% - 22px);
 }
 
-datalist {
-    max-height: 200px;
-    overflow-y: auto;
+/* Adjust alignment */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-
-input[type="text"]:focus,
-input[type="number"]:focus,
-select:focus,
-input[type="url"]:focus {
-    outline: none;
-    border-color: #5c9ead;
-}
 
 button {
     width: 60%;
