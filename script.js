@@ -117,7 +117,7 @@ async function plan(event) {
                     <p><strong>Weight:</strong> ${dogWeight} kg</p>
                     <p><strong>Energy Level:</strong> ${energyLevel.charAt(0).toUpperCase() + energyLevel.slice(1)}</p>
                     <p><strong>Activities:</strong></p>
-                    <ul style="list-style-type: disc; text-align: centre; padding-left: 20px;">
+                    <ul style="list-style: none; text-align: centre; padding-left: 20px;">
                         ${selectedActivities.map(activity => `<li>${activity}</li>`).join('')}
                     </ul>
                     <p><strong>Meal Plan:</strong> ${randomMealPlan}</p>
