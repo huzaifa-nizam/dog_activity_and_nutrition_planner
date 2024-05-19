@@ -44,10 +44,6 @@ button {
     box-sizing: border-box;
 }
 
-input[type="text"]#dogBreed {
-    background-color: #f9f9f9;
-}
-
 button {
     background-color: #4CAF50;
     color: white;
