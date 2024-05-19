@@ -65,6 +65,4 @@ button:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
     display: flex; /* Use flexbox for centering */
-    justify-content: center; /* Center horizontally */
-   
 }
