@@ -30,13 +30,12 @@ form {
     align-items: center;
 }
 
-/* Set common width for input fields and button */
 input[type="text"],
 input[type="number"],
 select,
 input[type="url"],
 button {
-    width: calc(100% - 24px); /* Adjusted width */
+    width: calc(100% - 24px);
     padding: 12px;
     margin: 8px 0;
     border: 1px solid #ccc;
@@ -45,28 +44,14 @@ button {
     box-sizing: border-box;
 }
 
-/* Style for breed selector */
 input[type="text"]#dogBreed {
     background-color: #f9f9f9;
 }
 
-/* Adjust alignment */
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-
 button {
-    width: 60%;
-    padding: 12px;
-    margin: 12px 0;
-    border: none;
-    border-radius: 6px;
     background-color: #5c9ead;
     color: white;
-    font-size: 16px;
+    border: none;
     cursor: pointer;
 }
 
@@ -79,4 +64,6 @@ button:hover {
     padding: 20px;
     border-radius: 8px;
     background-color: #f0f0f0;
-    box-shadow: 0
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
