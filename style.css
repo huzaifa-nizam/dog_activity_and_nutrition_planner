@@ -1,42 +1,58 @@
-document.getElementById('dogForm').addEventListener('submit', function(event) {
-  event.preventDefault();
-
-  const dogName = document.getElementById('dogName').value;
-  const dogBreed = document.getElementById('dogBreed').value;
-  const dogAge = parseInt(document.getElementById('dogAge').value);
-  const dogWeight = parseFloat(document.getElementById('dogWeight').value);
-  const energyLevel = document.getElementById('energyLevel').value;
-  const photoURL = document.getElementById('photoURL').value;
-
-  // Simulated data processing (replace with actual logic)
-  const activity = getActivity(energyLevel);
-  const mealPlan = getMealPlan(energyLevel);
-
-  const outputDiv = document.getElementById('output');
-  outputDiv.innerHTML = `
-    <h2>Hi ${dogName}!</h2>
-    <p>Activity: ${activity}</p>
-    <p>Meal Plan: ${mealPlan}</p>
-  `;
-  outputDiv.style.display = 'block';
-});
-
-function getActivity(energyLevel) {
-  const activities = {
-    low: ['Short walks', 'Gentle play sessions'],
-    medium: ['Moderate walks', 'Fetch sessions'],
-    high: ['Long hikes', 'Agility training'],
-  };
-  const randomIndex = Math.floor(Math.random() * activities[energyLevel].length);
-  return activities[energyLevel][randomIndex];
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-function getMealPlan(energyLevel) {
-  const mealPlans = {
-    low: ['Lower calorie intake', 'More fiber-rich foods'],
-    medium: ['Balanced diet with protein and carbohydrates'],
-    high: ['Higher calorie intake', 'More protein-rich foods'],
-  };
-  const randomIndex = Math.floor(Math.random() * mealPlans[energyLevel].length);
-  return mealPlans[energyLevel][randomIndex];
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"],
+select,
+input[type="url"],
+button {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#output {
+  display: none;
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
