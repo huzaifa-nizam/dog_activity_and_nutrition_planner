@@ -172,9 +172,9 @@ async function plan() {
     const dogAge = document.getElementById('dogAge').value;
     const dogWeight = document.getElementById('dogWeight').value;
     const energyLevel = document.getElementById('energyLevel').value;
-    const dogPhoto = document.getElementById('dogPhoto').value || 'https://via.placeholder.com/100';
+    const dogPhoto = document.getElementById('dogPhoto').files[0]; // Accessing the uploaded file
 
-    if (!dogName || !dogBreed || !dogAge || !dogWeight || !energyLevel) {
+    if (!dogName || !dogBreed || !dogAge || !dogWeight || !energyLevel || !dogPhoto) {
         alert('Please fill in all fields');
         return;
     }
@@ -198,18 +198,24 @@ async function plan() {
     const mealPlansForLevel = mealPlans[energyLevel];
     const randomMealPlan = mealPlansForLevel[Math.floor(Math.random() * mealPlansForLevel.length)];
 
-    // Create activity and meal plan output
-    const planOutput = `
-        <h2>Plan for ${dogName} (${breedInfo.name})</h2>
-        <img src="${dogPhoto}" alt="${dogName}">
-        <p>Age: ${dogAge} years</p>
-        <p>Weight: ${dogWeight} kg</p>
-        <p>Energy Level: ${energyLevel.charAt(0).toUpperCase() + energyLevel.slice(1)}</p>
-        <table>
-            <tr><th>Activity</th><td>${randomActivity}</td></tr>
-        </table>
-        ${randomMealPlan}
-    `;
+    // Display uploaded image
+    const reader = new FileReader();
+    reader.onload = function(event) {
+        const dogImage = event.target.result;
+        // Create activity and meal plan output
+        const planOutput = `
+            <h2>Plan for ${dogName} (${breedInfo.name})</h2>
+            <img src="${dogImage}" alt="${dogName}">
+            <p>Age: ${dogAge} years</p>
+            <p>Weight: ${dogWeight} kg</p>
+            <p>Energy Level: ${energyLevel.charAt(0).toUpperCase() + energyLevel.slice(1)}</p>
+            <table>
+                <tr><th>Activity</th><td>${randomActivity}</td></tr>
+            </table>
+            ${randomMealPlan}
+        `;
 
-    document.getElementById('planOutput').innerHTML = planOutput;
+        document.getElementById('planOutput').innerHTML = planOutput;
+    };
+    reader.readAsDataURL(dogPhoto); // Convert uploaded file to Data URL
 }
