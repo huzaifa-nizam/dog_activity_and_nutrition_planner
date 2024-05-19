@@ -166,63 +166,62 @@ const mealPlans = {
     ]
 };
 
-async function plan() {
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('dogForm');
+    form.addEventListener('submit', plan);
+});
+
+async function plan(event) {
+    event.preventDefault();
+
     const dogName = document.getElementById('dogName').value;
     const dogBreed = document.getElementById('dogBreed').value;
     const dogAge = document.getElementById('dogAge').value;
     const dogWeight = document.getElementById('dogWeight').value;
     const energyLevel = document.getElementById('energyLevel').value;
-    const dogPhoto = document.getElementById('dogPhoto').files[0]; // Accessing the uploaded file
+    const dogPhoto = document.getElementById('dogPhoto').files[0];
 
-    if (!dogName || !dogBreed || !dogAge || !dogWeight || !energyLevel ) {
+    if (!dogName || !dogBreed || !dogAge || !dogWeight || !energyLevel || !dogPhoto) {
         alert('Please fill in all fields');
         return;
     }
 
-    // Fetch breed-specific information from The Dog API
-    const breedResponse = await fetch(`https://api.thedogapi.com/v1/breeds/search?q=${dogBreed}`);
-    const breedData = await breedResponse.json();
+    try {
+        const breedResponse = await fetch(`https://api.thedogapi.com/v1/breeds/search?q=${dogBreed}`);
+        const breedData = await breedResponse.json();
 
-    if (breedData.length === 0) {
-        alert('Breed not found');
-        return;
+        if (breedData.length === 0) {
+            alert('Breed not found');
+            return;
+        }
+
+        const breedInfo = breedData[0];
+        
+        const activitiesForLevel = activities[energyLevel];
+        const randomActivity = activitiesForLevel[Math.floor(Math.random() * activitiesForLevel.length)];
+
+        const mealPlansForLevel = mealPlans[energyLevel];
+        const randomMealPlan = mealPlansForLevel[Math.floor(Math.random() * mealPlansForLevel.length)];
+
+        const reader = new FileReader();
+        reader.onload = function(event) {
+            const dogImage = event.target.result;
+            const planOutput = `
+                <h2>Plan for ${dogName} (${breedInfo.name})</h2>
+                <img src="${dogImage}" alt="${dogName}">
+                <p>Age: ${dogAge} years</p>
+                <p>Weight: ${dogWeight} kg</p>
+                <p>Energy Level: ${energyLevel.charAt(0).toUpperCase() + energyLevel.slice(1)}</p>
+                <table>
+                    <tr><th>Activity</th><td>${randomActivity}</td></tr>
+                </table>
+                ${randomMealPlan}
+            `;
+            document.getElementById('planOutput').innerHTML = planOutput;
+        };
+        reader.readAsDataURL(dogPhoto);
+    } catch (error) {
+        console.error('Error:', error);
+        alert('An error occurred while generating the plan. Please try again later.');
     }
-
-    const breedInfo = breedData[0];
-
-    // Select a random activity based on energy level
-    const activitiesForLevel = activities[energyLevel];
-    const randomActivity = activitiesForLevel[Math.floor(Math.random() * activitiesForLevel.length)];
-
-    // Select a random meal plan based on energy level
-    const mealPlansForLevel = mealPlans[energyLevel];
-    const randomMealPlan = mealPlansForLevel[Math.floor(Math.random() * mealPlansForLevel.length)];
-
-    // Display uploaded image
-    const reader = new FileReader();
-    reader.onload = function(event) {
-        const dogImage = event.target.result;
-        // Create activity and meal plan output
-        const planOutput = `
-            <h2>Plan for ${dogName} (${breedInfo.name})</h2>
-            <img src="${dogImage}" alt="${dogName}">
-            <p>Age: ${dogAge} years</p>
-            <p>Weight: ${dogWeight} kg</p>
-            <p>Energy Level: ${energyLevel.charAt(0).toUpperCase() + energyLevel.slice(1)}</p>
-            <table>
-                <tr><th>Activity</th><td>${randomActivity}</td></tr>
-            </table>
-            ${randomMealPlan}
-        `;
-
-        document.getElementById('planOutput').innerHTML = planOutput;
-    };
-    reader.readAsDataURL(dogPhoto); // Convert uploaded file to Data URL
 }
-
-// Observe planOutput div for changes using MutationObserver
-const planOutput = document.getElementById('planOutput');
-const observer = new MutationObserver(function(mutationsList, observer) {
-    // Handle mutations here if needed
-});
-observer.observe(planOutput, { childList: true });
