@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Activity and Nutrition Planner</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        input, button, select { padding: 10px; margin: 5px; }
+        table { width: 80%; margin: auto; border-collapse: collapse; }
+        th, td { border: 1px solid black; padding: 10px; text-align: left; }
+        img { width: 100px; height: 100px; object-fit: cover; }
+    </style>
+</head>
+<body>
+    <h1>Dog Activity and Nutrition Planner</h1>
+    <form id="plannerForm">
+        <input type="text" id="dogName" placeholder="Dog's Name" required>
+        <input type="text" id="dogBreed" placeholder="Dog's Breed" required>
+        <input type="number" id="dogAge" placeholder="Dog's Age" required>
+        <input type="number" id="dogWeight" placeholder="Dog's Weight (kg)" required>
+        <select id="energyLevel" required>
+            <option value="" disabled selected>Energy Level</option>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+        </select>
+        <input type="url" id="dogPhoto" placeholder="Dog's Photo URL">
+        <button type="button" onclick="plan()">Plan</button>
+    </form>
+    <div id="planOutput"></div>
+    <script src="script.js"></script>
+</body>
+</html>
