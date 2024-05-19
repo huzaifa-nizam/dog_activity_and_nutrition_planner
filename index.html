@@ -11,7 +11,7 @@
     <h1>Dog Activity and Nutrition Planner</h1>
     <form id="dogForm">
       <label for="dogName">Dog's Name:</label>
-      <input type="text" id="dogName" required>
+      <input type="text" id="dogName" placeholder="Enter Dog's Name" required>
       <label for="dogBreed">Dog's Breed:</label>
       <input list="dogBreeds" id="dogBreed" placeholder="Dog's Breed" required>
         <datalist id="dogBreeds">
@@ -37,17 +37,17 @@
             <option value="Basset Hound">
         </datalist>
       <label for="dogAge">Dog's Age (in years):</label>
-      <input type="number" id="dogAge" required>
+      <input type="number" id="dogAge" placeholder="Enter Dog's Age" required>
       <label for="dogWeight">Dog's Weight (in kg):</label>
-      <input type="number" id="dogWeight" required>
+      <input type="number" id="dogWeight" placeholder="Enter Dog's Weight" required>
       <label for="energyLevel">Energy Level:</label>
-      <select id="energyLevel" required>
+      <select id="energyLevel" placeholder="Dog's Energy Level"required>
         <option value="low">Low</option>
         <option value="medium">Medium</option>
         <option value="high">High</option>
       </select>
-      <label for="photoURL">Photo URL (optional):</label>
-      <input type="url" id="photoURL">
+      <label for="photoURL">Upload Dog's Photo:</label>
+      <input type="file" id="photoURL" accept="image/*" required>
       <button type="submit">Generate Plan</button>
     </form>
     <div id="planOutput"></div>
