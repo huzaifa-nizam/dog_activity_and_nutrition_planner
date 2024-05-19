@@ -5,7 +5,7 @@ document.getElementById('planner-form').addEventListener('submit', async (event)
     const formProps = Object.fromEntries(formData.entries());
 
     // Fetch breed-specific data using The Dog API
-    const breedData = await fetchBreedData(formProps.dogBreed);
+    const breedData = await fetchBreedData(formProps.breed);
 
     // Generate personalized plan
     const plan = generatePlan(formProps, breedData);
@@ -15,19 +15,20 @@ document.getElementById('planner-form').addEventListener('submit', async (event)
 });
 
 async function fetchBreedData(breed) {
-    // In a real-world scenario, you would fetch breed-specific data from The Dog API
-    // For the sake of this example, we'll use a placeholder object
-    return {
-        breed,
-        size: 'medium',
-        temperament: 'friendly',
-        image: 'https://example.com/image.jpg',
-    };
+    const response = await fetch(`https://api.thedogapi.com/v1/breeds/search?q=${breed}`);
+    const data = await response.json();
+
+    if (data.length === 0) {
+        throw new Error('Breed not found');
+    }
+
+    return data[0];
 }
 
 function generatePlan(formProps, breedData) {
     const activityLevels = {
-        low: ['Short Walk', 'Play with Toys'],medium: ['Moderate Walk', 'Fetch Game'],
+        low: ['Short Walk', 'Play with Toys'],
+        medium: ['Moderate Walk', 'Fetch Game'],
         high: ['Long Walk', 'Run with Owner'],
     };
 
