@@ -39,130 +39,19 @@ const activities = {
 
 const mealPlans = {
     low: [
-        `<h3>Meal Plan</h3>
-         <p>Breakfast: Cooked chicken with brown rice and green beans</p>
-         <p>Lunch: Dry kibble with a bit of wet food</p>
-         <p>Dinner: Ground turkey with sweet potatoes and peas</p>`,
-        `<h3>Meal Plan</h3>
-         <p>Breakfast: Scrambled eggs with spinach</p>
-         <p>Lunch: Dry kibble mixed with chicken broth</p>
-         <p>Dinner: Boiled chicken with quinoa and carrots</p>`,
-        `<h3>Meal Plan</h3>
-         <p>Breakfast: Cottage cheese with apple slices</p>
-         <p>Lunch: Dry kibble with pumpkin puree</p>
-         <p>Dinner: Steamed fish with brown rice and green beans</p>`,
-        `<h3>Meal Plan</h3>
-         <p>Breakfast: Yogurt with blueberries</p>
-         <p>Lunch: Dry kibble with mixed vegetables</p>
-         <p>Dinner: Beef stew with sweet potatoes and peas</p>`,
-        `<h3>Meal Plan</h3>
-         <p>Breakfast: Oatmeal with peanut butter</p>
-         <p>Lunch: Dry kibble with turkey slices</p>
-         <p>Dinner: Chicken and rice with peas and carrots</p>`,
-        `<h3>Meal Plan</h3>
-         <p>Breakfast: Boiled eggs with a slice of toast</p>
-         <p>Lunch: Dry kibble with beef broth</p>
-         <p>Dinner: Lamb with quinoa and green beans</p>`,
-        `<h3>Meal Plan</h3>
-         <p>Breakfast: Apple slices with peanut butter</p>
-         <p>Lunch: Dry kibble with salmon oil</p>
-         <p>Dinner: Turkey and rice with spinach and carrots</p>`,
-        `<h3>Meal Plan</h3>
-         <p>Breakfast: Blueberries with yogurt</p>
-         <p>Lunch: Dry kibble with cottage cheese</p>
-         <p>Dinner: Chicken with sweet potatoes and green beans</p>`,
-        `<h3>Meal Plan</h3>
-         <p>Breakfast: Scrambled eggs with cheese</p>
-         <p>Lunch: Dry kibble with green beans</p>
-         <p>Dinner: Fish with brown rice and carrots</p>`,
-        `<h3>Meal Plan</h3>
-         <p>Breakfast: Banana slices with peanut butter</p>
-         <p>Lunch: Dry kibble with beef jerky</p>
-         <p>Dinner: Pork with quinoa and green beans</p>`
+        "Cooked chicken with brown rice and green beans",
+        "Dry kibble with a bit of wet food",
+        "Ground turkey with sweet potatoes and peas"
     ],
     medium: [
-        `<h3>Meal Plan</h3>
-         <p>Breakfast: Boiled eggs with oatmeal and carrots</p>
-         <p>Lunch: Dry kibble mixed with pumpkin puree</p>
-         <p>Dinner: Baked salmon with quinoa and broccoli</p>`,
-        `<h3>Meal Plan</h3>
-         <p>Breakfast: Cottage cheese with banana slices</p>
-         <p>Lunch: Dry kibble with turkey and vegetables</p>
-         <p>Dinner: Chicken with sweet potatoes and peas</p>`,
-        `<h3>Meal Plan</h3>
-         <p>Breakfast: Greek yogurt with blueberries</p>
-         <p>Lunch: Dry kibble with chicken broth</p>
-         <p>Dinner: Ground beef with rice and green beans</p>`,
-        `<h3>Meal Plan</h3>
-         <p>Breakfast: Scrambled eggs with spinach</p>
-         <p>Lunch: Dry kibble with salmon oil</p>
-         <p>Dinner: Turkey with quinoa and broccoli</p>`,
-        `<h3>Meal Plan</h3>
-         <p>Breakfast: Peanut butter toast</p>
-         <p>Lunch: Dry kibble with lamb and vegetables</p>
-         <p>Dinner: Pork with sweet potatoes and peas</p>`,
-        `<h3>Meal Plan</h3>
-         <p>Breakfast: Cottage cheese with apple slices</p>
-         <p>Lunch: Dry kibble with beef jerky</p>
-         <p>Dinner: Fish with rice and carrots</p>`,
-        `<h3>Meal Plan</h3>
-         <p>Breakfast: Yogurt with blueberries</p>
-         <p>Lunch: Dry kibble with chicken and vegetables</p>
-         <p>Dinner: Beef stew with sweet potatoes and green beans</p>`,
-        `<h3>Meal Plan</h3>
-         <p>Breakfast: Scrambled eggs with cheese</p>
-         <p>Lunch: Dry kibble with turkey slices</p>
-         <p>Dinner: Lamb with quinoa and broccoli</p>`,
-        `<h3>Meal Plan</h3>
-         <p>Breakfast: Oatmeal with peanut butter</p>
-         <p>Lunch: Dry kibble with salmon oil</p>
-         <p>Dinner: Chicken with rice and peas</p>`,
-        `<h3>Meal Plan</h3>
-         <p>Breakfast: Banana slices with yogurt</p>
-         <p>Lunch: Dry kibble with beef broth</p>
-         <p>Dinner: Turkey with sweet potatoes and green beans</p>`
+        "Boiled eggs with oatmeal and carrots",
+        "Dry kibble mixed with pumpkin puree",
+        "Baked salmon with quinoa and broccoli"
     ],
     high: [
-        `<h3>Meal Plan</h3>
-         <p>Breakfast: Greek yogurt with blueberries and flaxseeds</p>
-         <p>Lunch: Dry kibble with chicken broth</p>
-         <p>Dinner: Lean beef with brown rice and spinach</p>`,
-        `<h3>Meal Plan</h3>
-         <p>Breakfast: Cottage cheese with banana slices</p>
-         <p>Lunch: Dry kibble with turkey and vegetables</p>
-         <p>Dinner: Baked salmon with quinoa and broccoli</p>`,
-        `<h3>Meal Plan</h3>
-         <p>Breakfast: Scrambled eggs with spinach</p>
-         <p>Lunch: Dry kibble with lamb and vegetables</p>
-         <p>Dinner: Chicken with sweet potatoes and peas</p>`,
-        `<h3>Meal Plan</h3>
-         <p>Breakfast: Boiled eggs with oatmeal and carrots</p>
-         <p>Lunch: Dry kibble with beef jerky</p>
-         <p>Dinner: Fish with rice and green beans</p>`,
-        `<h3>Meal Plan</h3>
-         <p>Breakfast: Peanut butter toast</p>
-         <p>Lunch: Dry kibble with chicken broth</p>
-         <p>Dinner: Turkey with quinoa and broccoli</p>`,
-        `<h3>Meal Plan</h3>
-         <p>Breakfast: Yogurt with blueberries</p>
-         <p>Lunch: Dry kibble with turkey and vegetables</p>
-         <p>Dinner: Lean beef with brown rice and spinach</p>`,
-        `<h3>Meal Plan</h3>
-         <p>Breakfast: Oatmeal with peanut butter</p>
-         <p>Lunch: Dry kibble with lamb and vegetables</p>
-         <p>Dinner: Baked salmon with sweet potatoes and peas</p>`,
-        `<h3>Meal Plan</h3>
-         <p>Breakfast: Cottage cheese with apple slices</p>
-         <p>Lunch: Dry kibble with chicken and vegetables</p>
-         <p>Dinner: Ground turkey with rice and broccoli</p>`,
-        `<h3>Meal Plan</h3>
-         <p>Breakfast: Scrambled eggs with cheese</p>
-         <p>Lunch: Dry kibble with salmon oil</p>
-         <p>Dinner: Pork with sweet potatoes and green beans</p>`,
-        `<h3>Meal Plan</h3>
-         <p>Breakfast: Banana slices with yogurt</p>
-         <p>Lunch: Dry kibble with chicken broth</p>
-         <p>Dinner: Turkey with quinoa and spinach</p>`
+        "Greek yogurt with blueberries and flaxseeds",
+        "Dry kibble with chicken broth",
+        "Lean beef with brown rice and spinach"
     ]
 };
 
@@ -198,7 +87,21 @@ async function plan(event) {
         const breedInfo = breedData[0];
         
         const activitiesForLevel = activities[energyLevel];
-        const randomActivity = activitiesForLevel[Math.floor(Math.random() * activitiesForLevel.length)];
+        let numberOfActivities;
+        if (energyLevel === 'high') {
+            numberOfActivities = 3;
+        } else if (energyLevel === 'medium') {
+            numberOfActivities = 2;
+        } else {
+            numberOfActivities = 1;
+        }
+
+        const selectedActivities = [];
+        for (let i = 0; i < numberOfActivities; i++) {
+            const randomIndex = Math.floor(Math.random() * activitiesForLevel.length);
+            selectedActivities.push(activitiesForLevel[randomIndex]);
+            activitiesForLevel.splice(randomIndex, 1); // Remove selected activity to avoid duplicates
+        }
 
         const mealPlansForLevel = mealPlans[energyLevel];
         const randomMealPlan = mealPlansForLevel[Math.floor(Math.random() * mealPlansForLevel.length)];
@@ -207,15 +110,18 @@ async function plan(event) {
         reader.onload = function(event) {
             const dogImage = event.target.result;
             const planOutput = `
-                <h2>Plan for ${dogName} (${breedInfo.name})</h2>
-                <img src="${dogImage}" alt="${dogName}">
-                <p>Age: ${dogAge} years</p>
-                <p>Weight: ${dogWeight} kg</p>
-                <p>Energy Level: ${energyLevel.charAt(0).toUpperCase() + energyLevel.slice(1)}</p>
-                <table>
-                    <tr><th>Activity</th><td>${randomActivity}</td></tr>
-                </table>
-                ${randomMealPlan}
+                <div style="text-align: center;">
+                    <h2>Plan for ${dogName} (${breedInfo.name})</h2>
+                    <img src="${dogImage}" alt="${dogName}" style="max-width: 100px; border-radius: 50%;">
+                    <p><strong>Age:</strong> ${dogAge} years</p>
+                    <p><strong>Weight:</strong> ${dogWeight} kg</p>
+                    <p><strong>Energy Level:</strong> ${energyLevel.charAt(0).toUpperCase() + energyLevel.slice(1)}</p>
+                    <p><strong>Activities:</strong></p>
+                    <ul style="list-style-type: disc; text-align: centre; padding-left: 20px;">
+                        ${selectedActivities.map(activity => `<li>${activity}</li>`).join('')}
+                    </ul>
+                    <p><strong>Meal Plan:</strong> ${randomMealPlan}</p>
+                </div>
             `;
             document.getElementById('planOutput').innerHTML = planOutput;
         };
