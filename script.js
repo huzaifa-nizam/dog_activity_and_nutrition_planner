@@ -1,3 +1,45 @@
+const activities = {
+    low: [
+        "Short walk around the neighborhood",
+        "Gentle play with toys indoors",
+        "Basic obedience training",
+        "Cuddle time and relaxation"
+    ],
+    medium: [
+        "Long walk in the park",
+        "Play fetch or tug-of-war",
+        "Intermediate training sessions",
+        "Visit to a dog-friendly café"
+    ],
+    high: [
+        "Jogging or running",
+        "Agility training or obstacle courses",
+        "Play dates with other dogs",
+        "Hiking adventure"
+    ]
+};
+
+const mealPlans = {
+    low: `
+        <h3>Meal Plan</h3>
+        <p>Breakfast: Cooked chicken with brown rice and green beans</p>
+        <p>Lunch: Dry kibble with a bit of wet food</p>
+        <p>Dinner: Ground turkey with sweet potatoes and peas</p>
+    `,
+    medium: `
+        <h3>Meal Plan</h3>
+        <p>Breakfast: Boiled eggs with oatmeal and carrots</p>
+        <p>Lunch: Dry kibble mixed with pumpkin puree</p>
+        <p>Dinner: Baked salmon with quinoa and broccoli</p>
+    `,
+    high: `
+        <h3>Meal Plan</h3>
+        <p>Breakfast: Greek yogurt with blueberries and flaxseeds</p>
+        <p>Lunch: Dry kibble with chicken broth</p>
+        <p>Dinner: Lean beef with brown rice and spinach</p>
+    `
+};
+
 async function plan() {
     const dogName = document.getElementById('dogName').value;
     const dogBreed = document.getElementById('dogBreed').value;
@@ -22,17 +64,12 @@ async function plan() {
 
     const breedInfo = breedData[0];
 
-    // Fetch random activity suggestion from Bored API
-    const activityResponse = await fetch('https://www.boredapi.com/api/activity/');
-    const activityData = await activityResponse.json();
+    // Select a random activity based on energy level
+    const activitiesForLevel = activities[energyLevel];
+    const randomActivity = activitiesForLevel[Math.floor(Math.random() * activitiesForLevel.length)];
 
-    // Generate a meal plan (dummy data for example)
-    const mealPlan = `
-        <h3>Meal Plan</h3>
-        <p>Breakfast: Chicken and rice</p>
-        <p>Lunch: Kibble with carrots</p>
-        <p>Dinner: Salmon and sweet potatoes</p>
-    `;
+    // Get meal plan based on energy level
+    const mealPlan = mealPlans[energyLevel];
 
     // Create activity and meal plan output
     const planOutput = `
@@ -42,10 +79,11 @@ async function plan() {
         <p>Weight: ${dogWeight} kg</p>
         <p>Energy Level: ${energyLevel.charAt(0).toUpperCase() + energyLevel.slice(1)}</p>
         <table>
-            <tr><th>Activity</th><td>${activityData.activity}</td></tr>
+            <tr><th>Activity</th><td>${randomActivity}</td></tr>
         </table>
         ${mealPlan}
     `;
 
     document.getElementById('planOutput').innerHTML = planOutput;
 }
+
